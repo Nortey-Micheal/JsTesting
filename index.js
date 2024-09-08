@@ -46,16 +46,12 @@ function analyzeArray (array) {
     for (let index = 0; index < array.length; index++) {
         fx += array[index]
     }
-    let average = fx / array.length;
-    let min = Math.min(...array);
-    let max = Math.max(...array);
-    let length = array.length;
     
     return {
-        "average": average,
-        "length": length,
-        "max": max,
-        "min": min
+        "average": fx / array.length,
+        "length": array.length,
+        "max": Math.max(...array),
+        "min": Math.min(...array)
     }
 }
 
