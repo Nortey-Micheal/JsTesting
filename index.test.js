@@ -1,4 +1,4 @@
-import {sum,capitalize,reverseString,calculator,analyzeArray} from "./index.js";
+import {sum,capitalize,reverseString,calculator,analyzeArray,caesarCipher} from "./index.js";
 
 test("Done",() => {
 
@@ -39,4 +39,8 @@ test("Analyzing the provided array", () => {
         max: 8,
         length: 6
      });
+})
+
+test("Make a caesar cipher of texts", () => {
+    expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
 })

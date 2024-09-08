@@ -55,4 +55,24 @@ function analyzeArray (array) {
     }
 }
 
-export {sum,capitalize,reverseString,calculator,analyzeArray};
+function caesarCipher (string,shiftFactor) {
+    let result = ""
+    for (let i = 0; i < string.length; i++)
+    {
+        let char = string[i];
+        if (char.match(/[a-zA-Z]/)) {
+            if (char.toUpperCase() === string[i]) {
+                let ch =  String.fromCharCode((char.charCodeAt(0) + shiftFactor - 65) % 26 + 65);
+                result += ch;
+            } else if (char.toLowerCase() === string[i]) {
+                let ch = String.fromCharCode((char.charCodeAt(0) + shiftFactor - 97) % 26 + 97);
+                result += ch;
+            }
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+export {sum,capitalize,reverseString,calculator,analyzeArray,caesarCipher};
